@@ -1,0 +1,48 @@
+.header{
+    background:seagreen;
+    height: 130px;
+    display: flex;
+    width: 100%;
+    padding-right: 22px;
+    
+}
+a{
+    color: white;
+}
+.searchinput{
+    width: 200px;
+    height: 34px;
+    border-radius: 4px;
+  }
+  .homebutton{
+  
+    background: brown;
+    color: yellow;
+  }
+li{
+    padding-right: 10px;
+   
+  
+  }
+  .searchinput{
+    width: 200px;
+    height: 34px;
+    border-radius: 4px;
+  }
+  .topmargin{
+      margin-top: 3px;
+  }
+  .button:hover{
+    background-color:brown;
+    border-radius: 4px;
+  
+  }
+  .cartspace{
+    color: white;
+  }
+  .logoutcolor{
+    color: white;
+  }
+ 
+
+  

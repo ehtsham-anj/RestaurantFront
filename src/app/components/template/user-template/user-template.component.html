@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg  header">
+  
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarUser" aria-controls="navbarUser" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarUser">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/home" class="nav-link">LOGO</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/dashboard" class="nav-link" *ngIf="isAdmin">Admin Panel</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" *ngIf="!currentUser">
+      <li>
+        <a routerLink="menu"> <button class="button topmargin" mat-button ="menu">MENU</button></a>
+      </li>
+      <li>
+        <a routerLink="reserve"><button class="button topmargin" mat-button>RESERVATION</button></a> 
+      </li>
+      <li>
+        <a routerLink="gallery"><button class="button topmargin" mat-button>GALLERY</button></a> 
+      
+      </li>
+      <li>
+        <a routerLink="payment"><button class="button topmargin" mat-button ><mat-icon class="cartspace">shopping_cart</mat-icon><span class="cartspace">Cart</span></button></a> 
+      </li>
+      
+   
+      
+      <li class="nav-item">
+        <a routerLink="/register" class="nav-link button"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link button"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+      </li>
+      <input type="text" placeholder="Search..."  class="searchinput topmargin">
+   <button class="homebutton"  mat-button><mat-icon>search</mat-icon></button>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" *ngIf="currentUser">
+      <li>
+        <a routerLink="menu"> <button class="button topmargin" mat-button ="menu">MENU</button></a>
+      </li>
+      <li>
+        <a routerLink="reserve"><button class="button topmargin" mat-button>RESERVATION</button></a> 
+      </li>
+      <li>
+        <a routerLink="gallery"><button class="button topmargin" mat-button>GALLERY</button></a> 
+      
+      </li>
+      <li>
+        <a ><button class="button topmargin" mat-button ><mat-icon class="cartspace">shopping_cart</mat-icon><span class="cartspace">Cart</span></button></a> 
+      </li>
+      <li class="nav-item">
+        <a href="/profile" class="nav-link"><span class="glyphicon glyphicon-user"></span> {{currentUser.name}}</a>
+      </li>
+    
+      <li class="nav-item">
+        <a (click)="logOut()" class="nav-link"><span class="glyphicon logoutcolor glyphicon-log-in"></span > <span class="logoutcolor"> LogOut</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,77 @@
+
+.addtocartbt01,.addtocartbt02,.addtocartbt03,.addtocartbt04,.addtocartbt05,
+.addtocartbt06,.addtocartbt07,
+.addtocartbp01,.addtocartbp02,.addtocartbp03,.addtocartbp04,.addtocartbp05,
+.addtocartbj01,.addtocartbj02,.addtocartbj03,.addtocartbj04,.addtocartbj05,
+.addtocartls01,.addtocartls02,.addtocartls03,.addtocartls04,
+.addtocartle01,.addtocartle02,.addtocartle03,.addtocartle04,
+.addtocartd1,.addtocartd2,.addtocartd3,.addtocartd4,.addtocartd5,
+.addtocartd6
+   {
+    float: right;
+    margin-right: 5%;
+    }
+.subhead{
+    background-color: black;
+    font-size: 18px;
+    color:white;
+    float: top;
+    text-align: center;
+}
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:20px; letter-spacing: 1px;}
+
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:600;margin:3px 0}
+
+.w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+.w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:90%}
+
+@media (min-width:601px)
+{
+.w3-col.m4,.w3-third{width:50%}
+}
+
+.w3-container,.w3-panel{padding:0.01em 20px}
+
+
+.w3-xxlarge{font-size:24px}
+
+.w3-jumbo{font-size:40px; text-decoration: underline}
+.w3-left-align{text-align:left}
+.w3-right-align{text-align:right}
+.w3-justify{text-align:justify}
+.w3-center{text-align:center}
+
+
+.w3-border{border:3px solid #ccc}
+
+.w3-padding-large{padding:10px 24px}
+
+
+.w3-padding-32{padding-top:10px;padding-bottom:10px}
+
+.w3-padding-64{padding-top:10px;padding-bottom:1px}
+
+
+.w3-right{float:right}
+
+.w3-transparent,.w3-hover-none:hover{background-color:transparent}
+.w3-hover-none:hover{box-shadow:none}
+
+/* Colors */
+
+.w3-red,.w3-hover-red:hover{color:white;background-color:black}
+
+
+.w3-white,.w3-hover-white:hover{color:#000;background-color:wheat}
+
+.w3-black,.w3-hover-black:hover{color:black;background-color:wheat}
+
+.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{color: black;background-color:whitesmoke}
+
+.w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover{color:#365324}
+
+.w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161}
