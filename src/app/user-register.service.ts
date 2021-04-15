@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserRegisterService {
 
+  //httpClint is use to connect with spring boot backend 
   constructor(private http : HttpClient) { }
 
   public doRegistration(reserve){
@@ -16,12 +17,15 @@ export class UserRegisterService {
   public getUsers(){
     return this.http.get("http://localhost:8080/api/admin/reservation-all");
   }
+  public deleteUser(email){
+    return this.http.get("http://localhost:8080/api/admin/delete/"+email);
+  }
 
   public getUserByFirstname(firstname){
     return this.http.get("http://localhost:8080/search/"+firstname);
   }
 
-  public deleteUser(email){
-    return this.http.get("http://localhost:8080/delete/"+email);
-  }
+  // public deleteUser(email){
+  //   return this.http.get("http://localhost:8080/delete/"+email);
+  // }
 }
