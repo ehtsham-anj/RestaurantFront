@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { UserRegisterService } from '../../../user-register.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {AdminService} from '../../../services/admin.service';
+import {Reserve} from '../../../model/reserve';
+import {MatPaginator, MatTableDataSource, MatSort} from '@angular/material';
+
+declare var $: any;
 
 @Component({
   selector: 'app-reservation-list',
@@ -7,19 +11,74 @@ import { UserRegisterService } from '../../../user-register.service';
   styleUrls: ['./reservation-list.component.css']
 })
 export class ReservationListComponent implements OnInit {
+  reserveList: Array<Reserve>;
+  dataSource: MatTableDataSource<Reserve> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'firstname', 'lastname','email','phone','party', 'action'
 
-  users : any;
+];
+  selectedReserve: Reserve = new Reserve();
+  errorMessage: string;
+  infoMessage: string;
 
-  constructor(private service : UserRegisterService) { }
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  constructor(private adminService: AdminService) { }
 
   ngOnInit() {
-    let response = this.service.getUsers();
-    response.subscribe(data => this.users = data);
+    this.findAllReservations();
   }
 
-  public removeUser(email : string){
-    let response = this.service.deleteUser(email);
-    response.subscribe(data => this.users = data);
+  ngAfterViewInit(){
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  findAllReservations(){
+    this.adminService.findAllReservations().subscribe(data => {
+      this.reserveList = data;
+      this.dataSource.data = data;
+    });
+  }
+
+  editUserRequest(reserve: Reserve) {
+    this.selectedReserve = reserve;
+    $("#userModal").modal('show');
+  }
+
+  editUser(){
+    this.adminService.updateReserve(this.selectedReserve).subscribe(data => {
+      let itemIndex = this.reserveList.findIndex(item => item.id == this.selectedReserve.id);
+      this.reserveList[itemIndex] = this.selectedReserve;
+      this.dataSource = new MatTableDataSource(this.reserveList);
+      this.infoMessage = "Mission is completed.";
+      $("#userModal").modal('hide');
+    },err => {
+      if(err.status === 409){
+        this.errorMessage = "Username should be unique for each user.";
+      }else{
+        this.errorMessage = "Unexpected error occurred.";
+      }
+    });
+  }
+
+  deleteUserRequest(reserve: Reserve) {
+    this.selectedReserve = reserve;
+    $("#deleteModal").modal('show');
+  }
+
+  deleteReserve(){
+    this.adminService.deleteReserve(this.selectedReserve).subscribe(data => {
+      let itemIndex = this.reserveList.findIndex(item => item.id == this.selectedReserve.id);
+      if(itemIndex !== -1){
+        this.reserveList.splice(itemIndex, 1);
+      }
+      this.dataSource = new MatTableDataSource(this.reserveList);
+      this.infoMessage = "Mission is completed.";
+      $("#deleteModal").modal('hide');
+    },err => {
+      this.errorMessage = "Unexpected error occurred.";
+    });
   }
 
 }

@@ -35,9 +35,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
 import { HoursComponent } from './components/hours/hours.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
-import { ReservationListComponent } from './components/admin/reservation-list/reservation-list.component'
-
-
+import{ReservationListComponent} from './components/admin/reservation-list/reservation-list.component'
 @NgModule({
   declarations: [
     AppComponent,
