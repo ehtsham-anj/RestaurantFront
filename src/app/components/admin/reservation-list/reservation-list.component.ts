@@ -11,6 +11,7 @@ declare var $: any;
   styleUrls: ['./reservation-list.component.css']
 })
 export class ReservationListComponent implements OnInit {
+
   reserveList: Array<Reserve>;
   dataSource: MatTableDataSource<Reserve> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'firstname', 'lastname','email','phone','party', 'action'
@@ -23,6 +24,9 @@ export class ReservationListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
+  users : any;
+
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
@@ -80,5 +84,10 @@ export class ReservationListComponent implements OnInit {
       this.errorMessage = "Unexpected error occurred.";
     });
   }
+
+  // public removeReserve(email : string){
+  //   let response = this.adminService.deleteReserve(email);
+  //   response.subscribe(data => this.users = data);
+  // }
 
 }

@@ -94,11 +94,14 @@ export class AdminService {
    {headers: this.headers});
   }
   updateReserve(reserve: Reserve): Observable<any> {
-    return this.http.put(API_URL + "reseve-update", JSON.stringify(reserve),
+    return this.http.put(API_URL + "reserve-update", JSON.stringify(reserve),
   {headers: this.headers});
   }
   deleteReserve(reserve: Reserve): Observable<any> {
     return this.http.post(API_URL + "reserve-delete", JSON.stringify(reserve),
   {headers: this.headers});
   }
+  // public deleteReserve(email){
+  //   return this.http.get("http://localhost:8080/api/admin/delete/"+email);
+  // }
 }
