@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators';
 import {User} from '../model/user';
 import {Reserve} from '../model/reserve'
 import {Product} from '../model/product';
+import {Inventory} from '../model/inventory';
 import {Transaction} from '../model/transaction';
 import {UserRegisterService} from '../user-register.service'
 
@@ -68,6 +69,32 @@ export class AdminService {
 
   numberOfProducts(): Observable<any> {
     return this.http.get(API_URL + "product-number",
+  {headers: this.headers});
+  }
+  //invetory
+
+  createInventory(inventory: Inventory): Observable<any> {
+    return this.http.post(API_URL + "inventory-create", JSON.stringify(inventory),
+  {headers: this.headers});
+  }
+
+  updateInventory(inventory: Inventory): Observable<any> {
+    return this.http.put(API_URL + "inventory-update", JSON.stringify(inventory),
+  {headers: this.headers});
+  }
+
+  deleteInventory(inventory: Inventory): Observable<any> {
+    return this.http.post(API_URL + "inventory-delete", JSON.stringify(inventory),
+  {headers: this.headers});
+  }
+
+  findAllInventories(): Observable<any> {
+    return this.http.get(API_URL + "inventory-all",
+  {headers: this.headers});
+  }
+
+  numberOfInventorys(): Observable<any> {
+    return this.http.get(API_URL + "inventory-number",
   {headers: this.headers});
   }
 

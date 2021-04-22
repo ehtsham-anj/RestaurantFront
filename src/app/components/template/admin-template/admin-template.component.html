@@ -57,5 +57,11 @@
         <span>Reservations</span>
       </a>
     </li>
+    <li class="nav-item" [class.active]="router.url==='/inventory-list'">
+      <a routerLink="/inventory-list" class="nav-link">
+        <span class="glyphicon glyphicon-list-alt" ></span>
+        <span>Inventory</span>
+      </a>
+    </li>
   </ul>
 </nav>

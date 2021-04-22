@@ -95,6 +95,9 @@
             <select class="form-control" name="role" id="role" required [(ngModel)]="selectedUser.role" #role="ngModel">
               <option value="ADMIN">ADMIN</option>
               <option value="USER">USER</option>
+              <option value="CHEF">CHEF</option>
+              <option value="EMPLOYEE">EMPLOYEE</option>
+              <option value="MANAGER">MANAGER</option>
             </select>
             <div *ngIf="f.submitted && !role.valid" class="help-block">Role is required.</div>
           </div>

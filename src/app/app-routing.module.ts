@@ -17,6 +17,8 @@ import { MenupageComponent } from './components/menupage/menupage.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationListComponent } from './components/admin/reservation-list/reservation-list.component';
+import { CartComponent } from './components/cart/cart.component';
+import { InventoryListComponent } from './components/admin/inventory-list/inventory-list.component';
 // import {HeaderComponent} from './components/header/header.component'
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
   {path: 'reserve', component: ReservationComponent},
   //User pages
   {path: 'login', component: LoginComponent},
+  {path: 'payment', component: CartComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'profile',
   component: ProfileComponent,
@@ -49,6 +52,11 @@ const routes: Routes = [
   },
   {path: 'reservation-list',
   component:ReservationListComponent,
+  canActivate: [AuthGuard],
+  data: {roles: [Role.ADMIN]}
+  },
+  {path: 'inventory-list',
+  component:InventoryListComponent,
   canActivate: [AuthGuard],
   data: {roles: [Role.ADMIN]}
   },

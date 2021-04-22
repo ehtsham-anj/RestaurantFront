@@ -35,7 +35,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TransactionListComponent } from './components/admin/transaction-list/transaction-list.component';
 import { HoursComponent } from './components/hours/hours.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
-import{ReservationListComponent} from './components/admin/reservation-list/reservation-list.component'
+import{ReservationListComponent} from './components/admin/reservation-list/reservation-list.component';
+import { CartComponent } from './components/cart/cart.component';
+import { InventoryListComponent } from './components/admin/inventory-list/inventory-list.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,11 @@ import{ReservationListComponent} from './components/admin/reservation-list/reser
    
     ReservationComponent,
     
-    ReservationListComponent
+    ReservationListComponent,
+    
+    CartComponent,
+    
+    InventoryListComponent
   ],
   imports: [
     BrowserModule,
